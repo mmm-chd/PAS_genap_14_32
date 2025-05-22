@@ -12,12 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.intent.pas_genap_14_32.R;
 import com.intent.pas_genap_14_32.fetch_api.ModelClass;
+import com.intent.pas_genap_14_32.fragment.ScheduleSessionFragment;
 
 import java.util.List;
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHolder> {
 
     List<ModelClass> eventsList;
+
+    public ScheduleAdapter(ScheduleSessionFragment scheduleSessionFragment,List<ModelClass> eventsList) {
+        this.eventsList = eventsList;
+    }
 
     @NonNull
     @Override
@@ -29,8 +34,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ModelClass modelClass = eventsList.get(position);
-        holder.tvTeam.setText(modelClass.getStrTeam());
-        holder.tvStadium.setText(modelClass.getStrStadium());
+        holder.tvEvent.setText(modelClass.getStrTeam());
+        holder.tvLeague.setText(modelClass.getStrStadium());
         Glide.with(holder.itemView.getContext()).load(modelClass.getStrBadge()).into(holder.ivBadge);
     }
 
@@ -41,15 +46,15 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvTeam;
+        TextView tvEvent;
         ImageView ivBadge;
-        TextView tvStadium;
+        TextView tvLeague;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvTeam = itemView.findViewById(R.id.tvTeam);
+            tvEvent = itemView.findViewById(R.id.tvOne);
             ivBadge = itemView.findViewById(R.id.ivBadge);
-            tvStadium = itemView.findViewById(R.id.tvStadium);
+            tvLeague = itemView.findViewById(R.id.tvTwo);
         }
     }
 }
