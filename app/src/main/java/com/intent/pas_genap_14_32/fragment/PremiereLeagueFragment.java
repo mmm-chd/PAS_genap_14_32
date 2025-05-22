@@ -45,29 +45,29 @@ public class PremiereLeagueFragment extends Fragment {
         rvPremiere.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-//        //Hit Api
-//        ApiService apiService = ApiClient.getClient().create(ApiService.class);
-//        Call<TeamResponse> call = apiService.getModelClasses();
-//
-//        call.enqueue(new Callback<TeamResponse>() {
-//
-//            @Override
-//            public void onResponse(Call<TeamResponse> call, Response<TeamResponse> response) {
-//                if (response.isSuccessful() && response.body() != null) {
-//                    rvPremiere.setVisibility(View.VISIBLE);
-//                    pbPremiere.setVisibility(View.GONE);
-//                    List<ModelClass> teamList = response.body().getTeams();
-//                    rvPremiere adapter = new PremiereAdapter(PremiereLeagueFragment.this, teamList);
-//                    rvPremiere.setAdapter(adapter);
-//                }
-//            }
+        //Hit Api
+        ApiService apiService = ApiClient.getClient().create(ApiService.class);
+        Call<TeamResponse> call = apiService.getPremierLeagueTeams();
 
-//            @Override
-//            public void onFailure(Call<TeamResponse> call, Throwable throwable) {
-//                Toast.makeText(getContext(), "Error: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
+        call.enqueue(new Callback<TeamResponse>() {
+
+            @Override
+            public void onResponse(Call<TeamResponse> call, Response<TeamResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    rvPremiere.setVisibility(View.VISIBLE);
+                    pbPremiere.setVisibility(View.GONE);
+                    List<ModelClass> teamList = response.body().getTeams();
+                    PremiereAdapter adapter = new PremiereAdapter(PremiereLeagueFragment.this, teamList);
+                    rvPremiere.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<TeamResponse> call, Throwable throwable) {
+                Toast.makeText(getContext(), "Error: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         return view;
     }
 }
