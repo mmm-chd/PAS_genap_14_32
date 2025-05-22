@@ -4,12 +4,17 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
-    
-    <TextView
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPremiere"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/pbPremiere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Premiere"
-        android:textSize="24sp"
-        />
+        android:layout_gravity="center"/>
 
 </LinearLayout>
