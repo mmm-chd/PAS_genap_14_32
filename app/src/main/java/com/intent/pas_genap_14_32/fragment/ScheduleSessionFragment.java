@@ -50,7 +50,7 @@ public class ScheduleSessionFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     rvSchedule.setVisibility(View.VISIBLE);
                     pbLoading.setVisibility(View.GONE);
-                    List<ModelClass> teamList = response.body().getTeams();
+                    List<ModelClass> teamList = response.body().getEvents();
                     ScheduleAdapter adapter = new ScheduleAdapter(ScheduleSessionFragment.this, teamList);
                     rvSchedule.setAdapter(adapter);
                 }

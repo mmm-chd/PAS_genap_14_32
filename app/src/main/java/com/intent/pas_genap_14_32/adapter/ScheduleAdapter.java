@@ -34,9 +34,9 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ModelClass modelClass = eventsList.get(position);
-        holder.tvEvent.setText(modelClass.getStrTeam());
-        holder.tvLeague.setText(modelClass.getStrStadium());
-        Glide.with(holder.itemView.getContext()).load(modelClass.getStrBadge()).into(holder.ivBadge);
+        holder.tvEvent.setText(modelClass.getStrEvent());
+        holder.tvLeague.setText(modelClass.getStrLeague());
+        Glide.with(holder.itemView.getContext()).load(modelClass.getStrLeagueBadge()).into(holder.ivBadge);
     }
 
     @Override
