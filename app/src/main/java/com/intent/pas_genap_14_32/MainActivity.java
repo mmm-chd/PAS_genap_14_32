@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setTitle("Premiere League");
         }
 
 
@@ -61,10 +62,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if (id == R.id.nav_premiere) {
                     fragment = new PremiereLeagueFragment();
+                    getSupportActionBar().setTitle("Premiere League");
                 } else if (id == R.id.nav_session) {
                     fragment = new ScheduleSessionFragment();
+                    getSupportActionBar().setTitle("All Session");
                 } else if (id == R.id.nav_profile) {
                     fragment = new ProfileFragment();
+                    getSupportActionBar().setTitle("Our Team");
                 }
 
                 if (fragment != null) {
