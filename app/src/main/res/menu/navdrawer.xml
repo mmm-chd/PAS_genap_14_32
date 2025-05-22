@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/nav_premiere"
-        android:title="Premiere"
-        android:icon="@drawable/premiere"/>
-    <item
-        android:id="@+id/nav_session"
-        android:title="All Session"
-        android:icon="@drawable/schedule"/>
-    <item
-        android:id="@+id/nav_profile"
-        android:title="Profile"
-        android:icon="@drawable/profile" />
+
+    <item android:title="Main">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_premiere"
+                    android:icon="@drawable/premiere"
+                    android:title="Premiere" />
+                <item
+                    android:id="@+id/nav_session"
+                    android:icon="@drawable/schedule"
+                    android:title="All Session" />
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/profile"
+                    android:title="Profile" />
+            </group>
+        </menu>
+    </item>
+
 </menu>
