@@ -17,8 +17,7 @@ import java.util.List;
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHolder> {
 
-    List<ModelClass> events;
-
+    List<ModelClass> eventsList;
 
     @NonNull
     @Override
@@ -29,7 +28,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ModelClass modelClass = events.get(position);
+        ModelClass modelClass = eventsList.get(position);
         holder.tvTeam.setText(modelClass.getStrTeam());
         holder.tvStadium.setText(modelClass.getStrStadium());
         Glide.with(holder.itemView.getContext()).load(modelClass.getStrBadge()).into(holder.ivBadge);
@@ -37,7 +36,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return eventsList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

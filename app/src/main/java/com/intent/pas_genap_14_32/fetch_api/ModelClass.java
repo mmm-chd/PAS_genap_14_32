@@ -15,8 +15,8 @@ public class ModelClass {
     @SerializedName("strEvent")
     private String strEvent;
 
-    @SerializedName("strSport")
-    private String strSpport;
+    @SerializedName("strLeagueBadge")
+    private String strLeagueBadge;
 
     @SerializedName("strLeague")
     private String strLeague;
@@ -25,8 +25,8 @@ public class ModelClass {
         return strEvent;
     }
 
-    public String getStrSpport() {
-        return strSpport;
+    public String getStrLeagueBadge() {
+        return strLeagueBadge;
     }
 
     public String getStrLeague() {
